@@ -25,13 +25,13 @@ App Android que reconhece os itens da geladeira por foto e sugere receitas com o
 
 | Marco | Entrega | Semana |
 | --- | --- | --- |
-| M0 | Setup e validação do prompt | 1 |
-| M1 | Telas com dados falsos | 1–2 |
-| M2 | Detecção de ingredientes com IA | 3 |
-| M3 | Lista editável | 4 |
-| M4 | Sugestão de receitas | 5 |
-| M5 | Favoritos | 6 |
-| M6 | Polimento e v1.0 | 7–8 |
+| M0 | Setup e validação do prompt | 1–2 |
+| M1 | Telas com dados falsos | 3–4 |
+| M2 | Detecção de ingredientes com IA | 5–6 |
+| M3 | Lista editável | 7–8 |
+| M4 | Sugestão de receitas | 9–10 |
+| M5 | Favoritos | 11–12 |
+| M6 | Polimento e v1.0 | 13–16 |
 
 Detalhes e issues de cada marco estão em [docs/TAP.md](docs/TAP.md#9-plano-de-entregas).
 

@@ -24,13 +24,13 @@ milestone() {
     echo "  $1"
   fi
 }
-milestone "M0 · Setup e validação"     "Semana 1"
-milestone "M1 · Telas com dados falsos" "Semanas 1 e 2"
-milestone "M2 · Detecção com IA"        "Semana 3"
-milestone "M3 · Lista editável"         "Semana 4"
-milestone "M4 · Receitas"               "Semana 5"
-milestone "M5 · Favoritos"              "Semana 6"
-milestone "M6 · Polimento e v1.0"       "Semanas 7 e 8"
+milestone "M0 · Setup e validação"     "Semanas 1 e 2"
+milestone "M1 · Telas com dados falsos" "Semanas 3 e 4"
+milestone "M2 · Detecção com IA"        "Semanas 5 e 6"
+milestone "M3 · Lista editável"         "Semanas 7 e 8"
+milestone "M4 · Receitas"               "Semanas 9 e 10"
+milestone "M5 · Favoritos"              "Semanas 11 e 12"
+milestone "M6 · Polimento e v1.0"       "Semanas 13 a 16"
 
 echo "==> Issues"
 # Usa a API REST (funciona em qualquer ambiente) e pula issues que já existem

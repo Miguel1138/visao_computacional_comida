@@ -10,7 +10,7 @@ App Android que reconhece os itens da geladeira por foto e sugere receitas com o
 | Tipo | Projeto pessoal |
 | Responsável | Desenvolvedor único (dono do produto e dev) |
 | Plataforma | Android nativo |
-| Duração estimada | 4 a 8 semanas para o MVP |
+| Duração estimada | Cerca de 16 semanas para o MVP |
 | Repositório | [Miguel1138/visao\_computacional\_comida](https://github.com/Miguel1138/visao_computacional_comida) |
 
 
@@ -26,7 +26,7 @@ O projeto também serve para praticar Jetpack Compose, Firebase com Kotlin e int
 1. Identificar pelo menos 80% dos itens visíveis numa foto da geladeira, medido em 30 fotos de teste.
 2. Ir da foto às sugestões de receita em menos de 30 segundos.
 3. Sugerir 3 receitas viáveis usando principalmente itens detectados.
-4. Publicar o MVP no próprio aparelho (APK de debug) em até 8 semanas.
+4. Publicar o MVP no próprio aparelho (APK de debug) em até 16 semanas.
 5. Usar o app pelo menos 3 vezes por semana no primeiro mês.
 
 
