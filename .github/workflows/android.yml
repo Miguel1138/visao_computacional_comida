@@ -1,0 +1,50 @@
+name: Android CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Pula o build enquanto o projeto Android ainda não existe (M0)
+      - name: Verificar projeto Android
+        id: check
+        run: |
+          if [ -f gradlew ]; then echo "exists=true" >> "$GITHUB_OUTPUT"; else echo "exists=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Configurar JDK 17
+        if: steps.check.outputs.exists == 'true'
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Configurar Gradle
+        if: steps.check.outputs.exists == 'true'
+        uses: gradle/actions/setup-gradle@v4
+
+      # google-services.json não é versionado; o CI usa um arquivo vindo de secret
+      - name: Criar google-services.json
+        if: steps.check.outputs.exists == 'true'
+        env:
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: |
+          if [ -n "$GOOGLE_SERVICES_JSON" ]; then echo "$GOOGLE_SERVICES_JSON" > app/google-services.json; fi
+
+      - name: Lint
+        if: steps.check.outputs.exists == 'true'
+        run: ./gradlew lint
+
+      - name: Testes de unidade
+        if: steps.check.outputs.exists == 'true'
+        run: ./gradlew testDebugUnitTest
+
+      - name: Build debug
+        if: steps.check.outputs.exists == 'true'
+        run: ./gradlew assembleDebug

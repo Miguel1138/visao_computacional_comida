@@ -1,0 +1,41 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local config
+local.properties
+
+# Kotlin
+.kotlin/
+
+# APK / bundles
+*.apk
+*.aab
+*.ap_
+*.dex
+output-metadata.json
+
+# Logs
+*.log
+
+# Keystores
+*.jks
+*.keystore
+
+# Segredos — nunca versionar
+google-services.json
+secrets.properties
+.env
+
+# SO
+.DS_Store
+Thumbs.db
