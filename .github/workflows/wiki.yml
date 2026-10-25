@@ -1,0 +1,39 @@
+name: Publicar wiki
+
+# Copia docs/wiki/ para a wiki do GitHub.
+# Pré-requisito único: criar a primeira página da wiki pelo site (aba Wiki > Create the first page).
+
+on:
+  push:
+    branches: [main]
+    paths: ["docs/wiki/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clonar a wiki
+        run: |
+          git clone "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.wiki.git" wiki \
+            || { echo "::error::Wiki ainda não inicializada. Crie a primeira página pelo site e rode este workflow de novo."; exit 1; }
+
+      - name: Sincronizar páginas
+        run: |
+          find wiki -maxdepth 1 -name '*.md' -delete
+          cp docs/wiki/*.md wiki/
+
+      - name: Publicar
+        working-directory: wiki
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "Nada a publicar."; exit 0; fi
+          git commit -m "docs: sincroniza wiki a partir de ${GITHUB_SHA::7}"
+          git push

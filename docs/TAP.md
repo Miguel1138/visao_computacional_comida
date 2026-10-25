@@ -177,7 +177,8 @@ Fluxo simples para um dev só: `main` sempre compilando, uma branch por issue e 
 ├── app/                  # Código do app Android
 ├── docs/
 │   ├── TAP.md            # Este documento
-│   └── prompts/          # Prompts do Gemini versionados
+│   ├── prompts/          # Prompts do Gemini versionados
+│   └── wiki/             # Páginas publicadas na wiki
 ├── .github/
 │   ├── workflows/        # CI (build e lint)
 │   └── ISSUE_TEMPLATE/   # Modelos de issue
