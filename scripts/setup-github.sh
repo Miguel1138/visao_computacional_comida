@@ -33,10 +33,16 @@ milestone "M5 · Favoritos"              "Semana 6"
 milestone "M6 · Polimento e v1.0"       "Semanas 7 e 8"
 
 echo "==> Issues"
+# Usa a API REST (funciona em qualquer ambiente) e pula issues que já existem
+EXISTING="$(gh api --paginate "repos/$REPO/issues?state=all&per_page=100" --jq '.[].title')"
 issue() {
   local ms="$1" labels="$2" title="$3"
-  gh issue create --repo "$REPO" --milestone "$ms" --label "$labels" \
-    --title "$title" --body "Parte do plano de entregas em [docs/TAP.md](https://github.com/$REPO/blob/main/docs/TAP.md)." >/dev/null
+  if grep -qxF "$title" <<<"$EXISTING"; then echo "  [$ms] $title (já existe)"; return; fi
+  local num
+  num="$(gh api "repos/$REPO/milestones?state=all" --jq ".[] | select(.title == \"$ms\") | .number")"
+  local args=(-f title="$title" -f body="Parte do plano de entregas em [docs/TAP.md](https://github.com/$REPO/blob/main/docs/TAP.md)." -F milestone="$num")
+  local l; IFS=',' read -ra ls <<<"$labels"; for l in "${ls[@]}"; do args+=(-f "labels[]=$l"); done
+  gh api "repos/$REPO/issues" "${args[@]}" >/dev/null
   echo "  [$ms] $title"
 }
 
