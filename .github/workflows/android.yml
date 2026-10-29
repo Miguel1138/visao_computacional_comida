@@ -37,6 +37,9 @@ jobs:
         run: |
           if [ -n "$GOOGLE_SERVICES_JSON" ]; then echo "$GOOGLE_SERVICES_JSON" > app/google-services.json; fi
 
+      - name: Grant execute permission to gradlew
+        run: chmod +x ./gradlew
+
       - name: Lint
         if: steps.check.outputs.exists == 'true'
         run: ./gradlew lint
