@@ -32,17 +32,23 @@ O projeto também serve para praticar Jetpack Compose, Firebase com Kotlin e int
 
 ## Escopo
 
+Escopo do TAP refinado pela ERS de 28/10/2026; detalhes e IDs em [[Requisitos]].
+
 **Incluído no MVP**
 
-- Tirar foto ou escolher da galeria (1 a 3 fotos)
-- Detecção de ingredientes via Gemini, com retorno em JSON
-- Lista de ingredientes editável (adicionar, remover, corrigir)
-- Filtros simples: tempo de preparo e tipo de refeição
-- Sugestão de 3 receitas com ingredientes usados e faltantes
-- Salvar receitas favoritas localmente
+- Tirar foto com a câmera do sistema ou escolher da galeria (1 a 3 fotos), descartadas após a detecção
+- Detecção de ingredientes via Gemini, com retorno em JSON; itens de baixa confiança só entram após confirmação
+- Lista de ingredientes editável (adicionar por texto com sugestões, remover, corrigir)
+- Histórico das últimas 5 listas, reabríveis sem nova foto
+- Filtros: tempo de preparo, tipo de refeição e dificuldade
+- Sugestão de 3 receitas com até 3 faltantes (sal, açúcar, óleo e água não contam) e botão "Gerar outras"
+- Salvar receitas favoritas completas, abertas sem internet
 
 **Fora do escopo (por enquanto)**
 
+- CameraX (o MVP usa a câmera do sistema)
+- Restrições alimentares nos filtros
+- Imagem nas receitas
 - Login e sincronização em nuvem
 - iOS
 - Controle de validade e estoque
