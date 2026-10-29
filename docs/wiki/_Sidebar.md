@@ -2,6 +2,7 @@
 
 - [[Home]]
 - [[Visão geral|Visao-Geral]]
+- [[Requisitos]]
 - [[Arquitetura]]
 - [[Roadmap]]
 - [[Riscos e premissas|Riscos-e-Premissas]]

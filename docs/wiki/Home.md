@@ -5,7 +5,8 @@ App Android que reconhece os itens da geladeira por foto e sugere receitas com o
 ## Páginas
 
 - [[Visão geral|Visao-Geral]]: problema, objetivos e escopo
-- [[Arquitetura]]: stack e como as partes se conectam
+- [[Requisitos]]: resumo da ERS, com RFs, RNFs e rastreabilidade
+- [[Arquitetura]]: stack, dados locais e interface com a IA
 - [[Roadmap]]: marcos M0 a M6 e entregas
 - [[Riscos e premissas|Riscos-e-Premissas]]
 - [[Prompts de IA|Prompts]]
@@ -14,6 +15,6 @@ App Android que reconhece os itens da geladeira por foto e sugere receitas com o
 ## Links
 
 - [Issues](https://github.com/Miguel1138/visao_computacional_comida/issues) · [Milestones](https://github.com/Miguel1138/visao_computacional_comida/milestones)
-- [TAP completo](https://github.com/Miguel1138/visao_computacional_comida/blob/main/docs/TAP.md)
+- [TAP completo](https://github.com/Miguel1138/visao_computacional_comida/blob/main/docs/TAP.md) · [ERS completa](https://github.com/Miguel1138/visao_computacional_comida/blob/main/docs/ERS.md)
 
 > Esta wiki é gerada a partir de `docs/wiki/` no repositório. Edite lá; mudanças feitas direto na wiki são sobrescritas.
